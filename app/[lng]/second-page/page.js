@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useTranslation } from '../../i18n'
-import { Header } from '../components/Header'
+import { Header } from '../components/HeaderOld'
 import { Footer } from '../components/Footer'
 
 export async function generateMetadata({ params: { lng } }) {

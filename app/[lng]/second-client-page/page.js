@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useTranslation } from '../../i18n/client'
-import { Header } from '../components/Header'
+import { Header } from '../components/HeaderOld'
 import { Footer } from '../components/Footer/client'
 
 export default function Page({ params: { lng } }) {

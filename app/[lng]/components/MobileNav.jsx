@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 import {useState} from "react";
-import {SheetContent, SheetTrigger} from "./ui/sheet";
+import {SheetContent, SheetTrigger, Sheet} from "@/app/[lng]/components/ui/sheet";
 
 const links = [
   {
