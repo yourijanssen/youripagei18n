@@ -39,6 +39,12 @@ const MobileNav = () => {
     }, 500);
   };
 
+  // Extract the current locale prefix from the pathname
+  const currentLocale = pathname.split('/')[1];
+
+  // Remove the locale prefix from the pathname for comparison
+  const trimmedPathname = pathname.replace(`/${currentLocale}`, '') || '/';
+
   return (
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
@@ -49,8 +55,8 @@ const MobileNav = () => {
         <SheetContent className="flex flex-col bg-primary-light dark:bg-primary-dark">
           {/* logo */}
           <div className="mt-32 mb-40 text-center text-2xl bg-light dark:bg-dark">
-            <Link href="/">
-              <h1 className="text-4xl font-semibold text-text-light dark:text-text-dark" onClick={closeSheet}>
+            <Link href={`/${currentLocale}/`} onClick={closeSheet}>
+              <h1 className="text-4xl font-semibold text-text-light dark:text-text-dark">
                 Youri<span className="text-accent">.</span>
               </h1>
             </Link>
@@ -59,11 +65,12 @@ const MobileNav = () => {
           <nav className="flex flex-col justify-center items-center gap-8 text-text-light dark:text-text-dark">
             {links.map((link, index) => (
                 <Link
-                    href={link.path}
+                    href={`/${currentLocale}${link.path}`}
                     key={index}
                     className={`${
-                        link.path === pathname &&
-                        "text-accent border-b-2 border-accent"
+                        (link.path === '/' && trimmedPathname === '/') || (link.path !== '/' && link.path === trimmedPathname)
+                            ? "text-accent border-b-2 border-accent"
+                            : ""
                     } text-xl capitalize hover:text-accent transition-all`}
                     onClick={closeSheet}
                 >

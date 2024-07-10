@@ -634,18 +634,9 @@ const handleSkillClick = (link) => {
 	}
 };
 
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from "@/components/ui/tooltip";
 
-import {ScrollArea} from "@/components/ui/scroll-area";
 import {motion} from "framer-motion";
-import {DegreeDownload} from "@/components/Downloads";
 import {VscVscode} from "react-icons/vsc";
 import {DiIntellij, DiLinux, DiMongodb, DiScrum} from "react-icons/di";
 import {GrMysql} from "react-icons/gr";
@@ -655,9 +646,14 @@ import {BsAndroid, BsWindows} from "react-icons/bs";
 import {PiMicrosoftTeamsLogo} from "react-icons/pi";
 import {BiTerminal} from "react-icons/bi";
 import Image from "next/image";
-import BarExample from "@/app/resume/bar";
-import {useEffect, useState} from "react";
-import TypingAnimation from "@/components/TypingAnimation";
+
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@radix-ui/react-tabs";
+import {ScrollArea} from "@radix-ui/react-scroll-area";
+import {DegreeDownload} from "@/app/[lng]/components/Downloads";
+import BarExample from "@/app/[lng]/resume/bar";
+import {Tooltip} from "chart.js";
+import {TooltipContent, TooltipProvider, TooltipTrigger} from "@radix-ui/react-tooltip";
+import TypingAnimation from "@/app/[lng]/components/TypingAnimation";
 
 const Resume = () => {
 	return (
