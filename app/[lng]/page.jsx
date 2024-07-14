@@ -8,13 +8,17 @@ import TypingAnimation from "@/app/[lng]/components/TypingAnimation";
 import Social from "@/app/[lng]/components/Social";
 import Photo from "@/app/[lng]/components/Photo";
 import Stats from "@/app/[lng]/components/Stats";
+import {Trans} from "react-i18next/TransWithoutContext";
+import Link from "next/link";
+import LanguageSwitcher from "@/app/[lng]/components/LanguageSwitcher";
+import {Footer} from "@/app/[lng]/components/Footer";
 
-export async function generateMetadata({ params: { lng } }) {
+export async function generateMetadata({ params: { lng }, path = ''  }) {
   const { t } = await useTranslation(lng)
-  return { title: t('h1') }
+  return { title: t('Main page') }
 }
 
-export default async function Page({ params: { lng } }) {
+export default async function Page({ params: { lng }, path = '' }) {
   if (languages.indexOf(lng) < 0) lng = fallbackLng
   const { t } = await useTranslation(lng)
   const lastCommitDate = getLastCommitDate();
@@ -54,6 +58,7 @@ export default async function Page({ params: { lng } }) {
               <Photo/>
             </div>
           </div>
+        <Footer lng={lng}/>
         </div>
         <Stats/>
       </section>

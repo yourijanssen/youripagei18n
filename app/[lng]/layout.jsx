@@ -66,7 +66,6 @@ export default function RootLayout({
 			<meta name="twitter:image" content=""/>
 
 			<link rel="canonical" href="https://yourijanssen.online"/>
-			<link rel="icon" href="/app/favicon.ico?v=2"/>
 		</head>
 		<body className={jetbrainsMono.variable}>
 		<Analytics/>

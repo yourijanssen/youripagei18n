@@ -5,7 +5,9 @@ module.exports = {
 		"./pages/**/*.{js,jsx}", // Specify files to process for Tailwind CSS utilities
 		"./components/**/*.{js,jsx}",
 		"./app/**/*.{js,jsx}",
+		"./app/[lng]/**/*.{js,jsx}",
 		"./src/**/*.{js,jsx}",
+		"."
 	],
 	prefix: "", // No prefix added to generated utility classes
 	theme: {
