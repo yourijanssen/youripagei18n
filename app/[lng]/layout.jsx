@@ -70,7 +70,7 @@ export default function RootLayout({
 		<body className={jetbrainsMono.variable}>
 		<Analytics/>
 		<SpeedInsights/>
-		<Header/>
+		<Header lng={lng}/>
 		<StairTransition/>
 		<PageTransition>{children}</PageTransition>
 		</body>
